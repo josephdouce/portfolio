@@ -76,6 +76,11 @@
       for (const p of items) {
         const card = tpl.content.firstElementChild.cloneNode(true);
         if (p.featured) card.classList.add("featured");
+        if (p.thumb) {
+          const t = document.createElement("a"); t.className = "thumb"; t.href = p.details || p.live || repoUrl(p.repo) || "#";
+          const im = document.createElement("img"); im.src = p.thumb; im.alt = `${p.name} screenshot`; im.loading = "lazy";
+          t.appendChild(im); card.prepend(t);
+        }
         card.querySelector("h3").textContent = p.name;
         card.querySelector(".year").textContent = p.year ?? "";
         const note = card.querySelector(".note");
@@ -85,7 +90,8 @@
         (p.tags || []).forEach(t => { const li = document.createElement("li"); li.textContent = t; tags.appendChild(li); });
         const act = card.querySelector(".actions");
         const link = (href, label, cls) => { if (!href) return; const l = document.createElement("a"); l.href = href; l.target = "_blank"; l.rel = "noopener"; l.className = cls; l.textContent = label; act.appendChild(l); };
-        link(p.live, "Open ↗", "primary");
+        if (p.details) { const d = document.createElement("a"); d.href = p.details; d.className = "primary"; d.textContent = "Details →"; act.appendChild(d); }
+        link(p.live, "Open ↗", p.details ? "ghost" : "primary");
         link(repoUrl(p.repo), "Source", "ghost");
         if (!act.children.length) act.remove();
         grid.appendChild(card);

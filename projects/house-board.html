@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>House Board · Joseph Douce</title>
+  <meta name="description" content="House Board: a shared household app for chores, the kids' job rota and a barcode-scanning shopping list, with live updates across every phone.">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="crumb"><a href="../index.html#web-apps">← All projects</a></nav>
+
+    <header class="dhero">
+      <p class="eyebrow">Web app · 2026</p>
+      <h1>House Board</h1>
+      <p class="sub">The family noticeboard on everyone's phone: recurring chores with a log of who did what, the kids' daily job rota, and a shared shopping list that scans barcodes and suggests Tesco products with prices. Any change appears on every signed-in phone in the house straight away.</p>
+      <div class="actions">
+        <a class="primary" href="https://houseboard.josephdouce.me" target="_blank" rel="noopener">Open the app ↗</a>
+        <span class="private">Source: private repository</span>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong>Live</strong><span>updates pushed to every phone over SSE</span></div>
+        <div class="fact"><strong>Multi-household</strong><span>sign up, then invite the household with a link</span></div>
+        <div class="fact"><strong>2,300</strong><span>Tesco products in the price catalogue</span></div>
+        <div class="fact"><strong>1 file</strong><span>front end, no framework or build step</span></div>
+      </div>
+    </header>
+
+    <section class="block">
+      <h2>What it does</h2>
+      <div class="shots phone">
+        <figure><button><img src="../img/house-board/chores.webp" alt="Chores tab" loading="lazy"></button><figcaption><b>Chores</b>Sorted by how overdue they are, done in one tap</figcaption></figure>
+        <figure><button><img src="../img/house-board/kids.webp" alt="Kids rota tab" loading="lazy"></button><figcaption><b>Kids' rota</b>Today's jobs and the week ahead, rotating fairly</figcaption></figure>
+        <figure><button><img src="../img/house-board/shopping.webp" alt="Shopping list tab" loading="lazy"></button><figcaption><b>Shopping</b>Scan a barcode, see the running total</figcaption></figure>
+      </div>
+      <ul>
+        <li><b>Chores</b> repeat every so many days, weeks or months, or on set weekdays. The board shows what's due, by whom it was last done, and a log that can be corrected or undone.</li>
+        <li><b>Kids' rota</b> rotates the daily jobs (dishwasher, setting the table…) between the children, and they tick them off themselves.</li>
+        <li><b>Shopping list</b> learns barcodes as you scan them, matches items to a Tesco catalogue for name suggestions and expected prices, and keeps an estimated basket total.</li>
+        <li><b>Households</b>: anyone can set one up and invite the people they live with. Owners can rename the household, remove members or hand over ownership. Each household's data is kept completely separate on the server.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>How it's built</h2>
+      <div class="stack">
+        <div><b>Front end</b>A single installable PWA page in plain JavaScript, designed for one-handed use on a phone.</div>
+        <div><b>Back end</b>A small Node.js server with no framework. It stores data as documents grouped into collections, and each household is isolated.</div>
+        <div><b>Real-time</b>Server-Sent Events push every change to the household's other devices instantly.</div>
+        <div><b>Storage</b>PostgreSQL in production, and a SQLite file for local development, so you can try it with nothing installed.</div>
+        <div><b>Accounts</b>Sign-up confirmation and password-reset emails via Resend, rate limiting, and an admin view that can pause any household.</div>
+        <div><b>Delivery</b>Tests run on GitHub Actions, then a self-hosted runner deploys to the home server with an automatic rollback.</div>
+      </div>
+      <div class="flow">phone ──► Cloudflare ──tunnel──► Caddy ──► house-board (Node) ──► PostgreSQL
+                                               └─► school-app  (same box, same pipeline)</div>
+    </section>
+  </div>
+
+  <footer class="wrap foot"><p><a href="../index.html">← Back to all projects</a> · Screenshots from a demo household.</p></footer>
+  <script src="lightbox.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tenant Guard · Joseph Douce</title>
+  <meta name="description" content="Tenant Guard: an Edge extension that colour-codes each browser profile by Microsoft 365 tenant and blocks sign-ins or guest visits to the wrong tenant.">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="crumb"><a href="../index.html#m365">← All projects</a></nav>
+
+    <header class="dhero">
+      <p class="eyebrow">Browser extension · 2026</p>
+      <h1>Tenant Guard</h1>
+      <p class="sub">If you work across two Microsoft 365 tenants, sooner or later you'll create a flow, share a file or deploy a Power Platform solution in the wrong one. Tenant Guard colour-codes each Edge profile by tenant, and blocks you or warns you the moment a page belongs to the other tenant.</p>
+      <div class="actions">
+        <a class="primary" href="https://github.com/josephdouce/tenant-guard" target="_blank" rel="noopener">Source &amp; install ↗</a>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong>Manifest V3</strong><span>Edge / Chromium extension</span></div>
+        <div class="fact"><strong>20+</strong><span>Microsoft cloud domains watched</span></div>
+        <div class="fact"><strong>0</strong><span>data leaves the browser</span></div>
+        <div class="fact"><strong>~450</strong><span>lines of plain JavaScript</span></div>
+      </div>
+    </header>
+
+    <section class="block">
+      <h2>Always know where you are</h2>
+      <p>Each profile gets a coloured strip across the top of every Microsoft page, a tenant name pill in the corner, and a badge on the toolbar icon.</p>
+      <div class="shots desk">
+        <figure><button><img src="../img/tenant-guard/own-tenant.webp" alt="Page in the correct tenant" loading="lazy"></button><figcaption><b>Right tenant</b>Blue strip and "Contoso" pill: you're where you meant to be</figcaption></figure>
+        <figure><button><img src="../img/tenant-guard/blocked.webp" alt="Block screen" loading="lazy"></button><figcaption><b>Wrong tenant: blocked</b>With one click to copy the link for the right profile</figcaption></figure>
+        <figure><button><img src="../img/tenant-guard/warn-banner.webp" alt="Warning banner" loading="lazy"></button><figcaption><b>Banner mode</b>For people who'd rather be warned than stopped</figcaption></figure>
+        <figure><button><img src="../img/tenant-guard/options.webp" alt="Settings page" loading="lazy"></button><figcaption><b>Settings</b>Tenant IDs, domains and SharePoint names; copy them between profiles</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>How it detects the wrong tenant</h2>
+      <ul>
+        <li><b>Sign-in pages:</b> catches you picking or typing an account from the other tenant's domains before the sign-in completes.</li>
+        <li><b>SharePoint and OneDrive:</b> recognises the other tenant's site names, including <code>-my</code> and <code>-admin</code> hosts.</li>
+        <li><b>Guest links:</b> decodes nested and encoded URLs to find the other tenant's ID or domain, which catches guest links into Teams, Power Apps, Azure and Entra.</li>
+        <li><b>CLI sign-ins:</b> remembers the URL a sign-in flow started from. "Copy link for the other profile" then lets tools like <code>pac auth</code> finish in the right browser.</li>
+      </ul>
+      <div class="shots phone" style="max-width:280px">
+        <figure><button><img src="../img/tenant-guard/popup.webp" alt="Toolbar popup" loading="lazy" style="aspect-ratio:auto;border-width:1px;border-radius:10px"></button><figcaption><b>Toolbar popup</b>Which profile is this?</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>How it's built</h2>
+      <div class="stack">
+        <div><b>Content script</b>Runs at <code>document_start</code> on Microsoft cloud domains and draws its UI in a closed shadow DOM, so pages can't restyle or interfere with it.</div>
+        <div><b>Service worker</b>Keeps the toolbar badge in sync with the profile's tenant.</div>
+        <div><b>Private by design</b>Only uses the <code>storage</code> and <code>activeTab</code> permissions. Settings stay in the profile, and nothing is sent anywhere.</div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="wrap foot"><p><a href="../index.html">← Back to all projects</a> · Screenshots use the made-up tenants Contoso and Fabrikam.</p></footer>
+  <script src="lightbox.js"></script>
+</body>
+</html>

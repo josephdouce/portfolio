@@ -8,11 +8,14 @@
 //   live                         - optional link to a running version
 //   note                         - optional small label, e.g. "Contributor"
 //   featured                     - true to show a larger card at the top of its section
+//   details                      - optional link to a detail page (projects/*.html)
+//   thumb                        - optional screenshot shown at the top of the card
 
 const GITHUB_USER = "josephdouce";
 
 const CATEGORIES = [
   { id: "power-platform", title: "Power Platform", intro: "Business apps and automation built on Microsoft Power Apps, Power Automate, Dataverse and Power BI." },
+  { id: "web-apps", title: "Web Apps", intro: "Full-stack apps in daily use, self-hosted on a home server with tested, automatic deployment." },
   { id: "m365", title: "Microsoft 365 & Productivity", intro: "Tools that make day-to-day work across tenants and data less painful." },
   { id: "hardware", title: "Home Automation & Hardware", intro: "ESPHome firmware, reverse-engineered protocols and things that talk to physical devices." },
   { id: "tabletop", title: "Tabletop & Gaming Tools", intro: "Utilities for Warhammer 40k and EVE Online, several merged upstream into community projects." },
@@ -28,9 +31,24 @@ const PROJECTS = [
   //   blurb: "What it does and who uses it.",
   //   tags: ["Power Apps", "Dataverse", "Power Automate"], featured: true },
 
+  // ---------- Web apps ----------
+  {
+    category: "web-apps", name: "Bookbag Buddy", year: 2026, featured: true,
+    blurb: "Times tables, number bonds and spelling practice for primary schools. A pupil app with spaced repetition, a teacher app with results, set work, calendar and messages, and a parent app with push notifications. Multi-school, Node and PostgreSQL, deployed with CI/CD.",
+    tags: ["Node.js", "PostgreSQL", "PWA", "Web Push", "GitHub Actions"],
+    live: "https://bookbagbuddy.app", details: "projects/school-app.html", thumb: "img/school-app/21-class-results.webp",
+  },
+  {
+    category: "web-apps", name: "House Board", year: 2026, featured: true,
+    blurb: "Shared household app for chores, the kids' job rota and a barcode-scanning shopping list with Tesco price suggestions. Live updates on every phone, and separate households with invite links.",
+    tags: ["Node.js", "PostgreSQL", "SSE", "PWA"],
+    live: "https://houseboard.josephdouce.me", details: "projects/house-board.html", thumb: "img/house-board/thumb.webp",
+  },
+
   // ---------- Microsoft 365 ----------
   {
     category: "m365", name: "Tenant Guard", year: 2026, featured: true,
+    details: "projects/tenant-guard.html", thumb: "img/tenant-guard/blocked.webp",
     blurb: "Edge extension that colour-codes each browser profile by Microsoft 365 tenant and blocks sign-ins or guest visits to the wrong one. Spots the tenant from the sign-in page, SharePoint and OneDrive URLs and tenant IDs, and gives you a 'copy link for the other profile' button so CLI sign-ins such as pac finish in the right place.",
     tags: ["JavaScript", "Edge Extension", "Entra ID", "M365"], repo: "tenant-guard",
   },
