@@ -25,11 +25,13 @@ const CATEGORIES = [
 ];
 
 const PROJECTS = [
-  // ---------- Power Platform (work apps - details to follow) ----------
-  // Example shape:
-  // { category: "power-platform", name: "App name", year: 2026,
-  //   blurb: "What it does and who uses it.",
-  //   tags: ["Power Apps", "Dataverse", "Power Automate"], featured: true },
+  // ---------- Power Platform ----------
+  {
+    category: "power-platform", name: "ISP · Integrated Service Platform", year: 2026, featured: true,
+    blurb: "End-to-end field service platform: a 24-module Service Hub (a React Power Apps code app for office staff and technicians' phones), a React Power Pages customer portal, and AI-driven automation that processes supplier paperwork. Runs from customer request to signed report to invoice on one Dataverse model.",
+    tags: ["Power Apps code app", "Power Pages", "React", "TypeScript", "Dataverse", "Power Automate", "Copilot Studio"],
+    details: "projects/isp.html", thumb: "img/isp/thumb.webp", note: "Work app · source private",
+  },
 
   // ---------- Web apps ----------
   {

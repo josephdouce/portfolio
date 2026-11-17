@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ISP · Integrated Service Platform · Joseph Douce</title>
+  <meta name="description" content="ISP, the Integrated Service Platform: a Power Platform field service system with a React Power Apps code app, a React Power Pages customer portal, Dataverse, Power Automate and AI.">
+  <link rel="icon" href="../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <nav class="crumb"><a href="../index.html#power-platform">← All projects</a></nav>
+
+    <header class="dhero">
+      <p class="eyebrow">Power Platform · 2026</p>
+      <h1>ISP · Integrated Service Platform</h1>
+      <p class="sub">One connected platform for a whole field service operation. A customer's request, the quote, the supplier paperwork, the plan, the technician's visit, the signed service report and the invoice all live on the same Dataverse records. It replaced spreadsheets, shared inboxes and a legacy Canvas app.</p>
+      <div class="actions">
+        <a class="primary" href="isp-deck.html">View the showcase deck →</a>
+        <span class="private">Source: private (work app). Screenshots are from a local demo with fictional data.</span>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong>24</strong><span>Service Hub modules, desktop and mobile</span></div>
+        <div class="fact"><strong>9</strong><span>Customer Portal pages</span></div>
+        <div class="fact"><strong>40+</strong><span>Dataverse tables in one shared model</span></div>
+        <div class="fact"><strong>~50k</strong><span>lines of TypeScript, 80+ React components</span></div>
+      </div>
+    </header>
+
+    <section class="block">
+      <h2>One request, eight steps, zero re-keying</h2>
+      <p>The customer raises a request on the portal. A manager triages it, and urgent requests get an automatic Teams meeting with the machine's engineers. One click turns it into a quote or a job. AI reads the supplier's replies, the job is planned on a drag-and-drop board, and the technician works through it on their phone. The signed report is emailed to the customer, and billing pulls the order and invoice numbers back from the ERP.</p>
+    </section>
+
+    <section class="block">
+      <h2>The Service Hub</h2>
+      <p>A Power Apps code app written in React, Vite and TypeScript. It has 24 modules, and every page and control is gated per user. The same app runs on a planner's widescreen and a technician's phone.</p>
+      <div class="shots desk">
+        <figure><button><img src="../img/isp/planner.webp" alt="Planner" loading="lazy"></button><figcaption><b>Planner</b>Drag to reschedule or reassign; copy and paste jobs between people and days</figcaption></figure>
+        <figure><button><img src="../img/isp/dashboard.webp" alt="Dashboard" loading="lazy"></button><figcaption><b>Dashboard</b>The week at a glance, with cards that drill into filtered lists</figcaption></figure>
+        <figure><button><img src="../img/isp/customer-requests.webp" alt="Customer requests" loading="lazy"></button><figcaption><b>Customer requests</b>Convert a portal request to a quote or job in one click</figcaption></figure>
+        <figure><button><img src="../img/isp/quotes.webp" alt="Quotes" loading="lazy"></button><figcaption><b>Quotes</b>A 13-stage lifecycle from request to invoice, with documents filed automatically</figcaption></figure>
+        <figure><button><img src="../img/isp/labour-estimate-form.webp" alt="Labour estimate" loading="lazy"></button><figcaption><b>Labour estimate</b>Customer rate profiles, weekend and overtime splits, PDF in the browser</figcaption></figure>
+        <figure><button><img src="../img/isp/reports.webp" alt="Reports and billing" loading="lazy"></button><figcaption><b>Reports &amp; billing</b>Order and invoice numbers matched back from the ERP</figcaption></figure>
+        <figure><button><img src="../img/isp/machine-detail.webp" alt="Machine record" loading="lazy"></button><figcaption><b>Machine record</b>Full history, FMEA issues and a Copilot Studio briefing</figcaption></figure>
+        <figure><button><img src="../img/isp/timesheet.webp" alt="Timesheet" loading="lazy"></button><figcaption><b>Timesheet</b>Hours, leave and banked time, with payroll exports for the UK, France and Germany</figcaption></figure>
+        <figure><button><img src="../img/isp/permissions.webp" alt="Permissions" loading="lazy"></button><figcaption><b>Permissions</b>View and edit flags per user for every module</figcaption></figure>
+        <figure><button><img src="../img/isp/competencies.webp" alt="Competencies" loading="lazy"></button><figcaption><b>Competencies</b>Skills matrix: current against required level</figcaption></figure>
+        <figure><button><img src="../img/isp/maintenance-plans.webp" alt="Maintenance plans" loading="lazy"></button><figcaption><b>Maintenance plans</b>Three-pane editor for plans, tasks and checklists</figcaption></figure>
+        <figure><button><img src="../img/isp/weekly-hours.webp" alt="Weekly hours heatmap" loading="lazy"></button><figcaption><b>Analytics</b>Weekly hours heatmap that flags overtime risk early</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>In the technician's pocket</h2>
+      <p>A nine-step job wizard: Safety, Details, Hours, Report, Faults, Parts, Attachments, Survey and Review. A risk assessment comes before any work starts. Signatures are captured on the glass, and marking the job complete emails the PDF report to the customer before the engineer has left site.</p>
+      <div class="shots phone">
+        <figure><button><img src="../img/isp/phone-jobs.webp" alt="Assigned jobs" loading="lazy"></button><figcaption><b>My jobs</b>Today and upcoming</figcaption></figure>
+        <figure><button><img src="../img/isp/phone-safety.webp" alt="Safety" loading="lazy"></button><figcaption><b>Safety</b>Point-of-work risk assessment</figcaption></figure>
+        <figure><button><img src="../img/isp/phone-details.webp" alt="Job details" loading="lazy"></button><figcaption><b>Details</b>Machine, contract and schedule</figcaption></figure>
+        <figure><button><img src="../img/isp/phone-hours.webp" alt="Hours entry" loading="lazy"></button><figcaption><b>Hours</b>Travel, work and breaks</figcaption></figure>
+        <figure><button><img src="../img/isp/phone-report.webp" alt="Report entry" loading="lazy"></button><figcaption><b>Report</b>Rich-text work summary</figcaption></figure>
+        <figure><button><img src="../img/isp/phone-faults.webp" alt="Faults" loading="lazy"></button><figcaption><b>Faults</b>FMEA severity, occurrence, detection</figcaption></figure>
+        <figure><button><img src="../img/isp/phone-survey.webp" alt="Survey" loading="lazy"></button><figcaption><b>Survey</b>Admin-designed fields, a photo per field</figcaption></figure>
+        <figure><button><img src="../img/isp/phone-review.webp" alt="Review and sign-off" loading="lazy"></button><figcaption><b>Review</b>Signatures, then complete and send</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>The Customer Portal</h2>
+      <p>A Power Pages code site in React and Tailwind. Customers see their own machines, track quotes and orders live, upload POs, download signed service reports and raise requests that land directly in the Service Hub. Web roles plus table and column permissions keep each account's data to itself, and cost and supplier columns are never exposed.</p>
+      <div class="shots desk">
+        <figure><button><img src="../img/isp/portal-home.webp" alt="Portal home" loading="lazy"></button><figcaption><b>Home</b>Live counts, recent activity and a new request one click away</figcaption></figure>
+        <figure><button><img src="../img/isp/portal-quotations.webp" alt="Quotations and orders" loading="lazy"></button><figcaption><b>Quotations &amp; orders</b>Status at a glance; upload a PO to place the order</figcaption></figure>
+        <figure><button><img src="../img/isp/portal-quote-request.webp" alt="Request a quotation" loading="lazy"></button><figcaption><b>Request a quotation</b>Guided form, limited to the customer's own machines</figcaption></figure>
+        <figure><button><img src="../img/isp/portal-service-reports.webp" alt="Service reports" loading="lazy"></button><figcaption><b>Service reports</b>Every signed report as a PDF</figcaption></figure>
+        <figure><button><img src="../img/isp/portal-users.webp" alt="Portal users" loading="lazy"></button><figcaption><b>Users</b>Customer admins manage their own access</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>Automation &amp; AI</h2>
+      <ul>
+        <li><b>Supplier paperwork:</b> suppliers reply to a shared mailbox. AI Builder reads each PDF, classifies it as a quote, order acknowledgement, delivery note or invoice, matches it to the right quote, files it and moves the quote forward.</li>
+        <li><b>Machine briefing:</b> a Copilot Studio agent grounded in Dataverse summarises a machine's history, recurring faults and open actions.</li>
+        <li><b>Teams meetings:</b> urgent portal requests create a meeting with the right engineers, and the join link appears on the customer's request.</li>
+        <li><b>Reports and approvals:</b> completed jobs generate, email and file the service report, and approvals notify the technician automatically.</li>
+      </ul>
+    </section>
+
+    <section class="block">
+      <h2>How it's built</h2>
+      <div class="stack">
+        <div><b>Front ends</b>React and TypeScript with Vite, Tailwind v4 and shadcn/ui (Radix), TanStack Query and Table, Zustand, React Router, Tiptap and Recharts.</div>
+        <div><b>Data</b>One Dataverse model behind both products, with 40+ typed OData services generated from the schema.</div>
+        <div><b>Documents</b>jsPDF and html2canvas for reports and estimates, SheetJS for Excel exports, and SharePoint through a Power Automate bridge.</div>
+        <div><b>Integrations</b>SharePoint, Outlook, Teams, Power BI and the ERP, AI Builder, Copilot Studio and Synthesia.</div>
+        <div><b>ALM</b>Ships as a managed solution with a scripted DEV → PROD deploy, environment variables and lint gates. One command builds and publishes to the tenant.</div>
+        <div><b>Security</b>Entra ID sign-in, per-module permissions in the Hub, and server-side web roles and table permissions on the portal.</div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="wrap foot"><p><a href="../index.html">← Back to all projects</a> · All company names, people and figures in these screenshots are fictional.</p></footer>
+  <script src="lightbox.js"></script>
+</body>
+</html>
